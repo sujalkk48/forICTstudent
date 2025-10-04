@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.up1 {
+  background-color: greenyellow;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 600;
+  color: black;
+}
+
+.up1:hover {
+  cursor: pointer;
+  color: #fff;
+  border-color: greenyellow;
+  background-color: black;
+}
+
+main {
+  margin-top: 100px;
+  margin-bottom: 80px; /* Footer ke height ke hisaab se space */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
+}
+
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  gap: 15px;
+}
+
+.section img {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+  border-color: greenyellow;
+}
+
+.section select {
+  width: 100%;
+  padding: 5px;
+  font-size: clamp(14px, 2vw, 16px);
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: greenyellow;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid white;
+}
+
+.vv99 {
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+
+
+  width: 400%;
+  border-top: 1px solid white;
+}
+
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.mid-title {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: bold;
+  color: black;
+  background-color: greenyellow;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: block;
+  width: fit-content;
+  margin: 15px auto;   /* ऊपर-नीचे का gap छोटा कर दिया */
+}
+
+.paper {
+  margin-top: 20px;    /* पहले बहुत ज्यादा था, अब कम किया */
+  margin-bottom: 60px; /* footer ke liye thoda space */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;           /* card ke beech ka gap bhi halka sa kam */
+  justify-items: center;
+  padding: 10px;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .paper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .paper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
