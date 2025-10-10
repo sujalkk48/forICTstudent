@@ -1,0 +1,63 @@
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .paper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .paper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.input-box {
+  margin: 15px 0;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  background: #2980b9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1c598a;
+}
+
+#message {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
