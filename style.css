@@ -42,7 +42,8 @@ nav {
 
 main {
   margin-top: 100px;
-  margin-bottom: 80px; /* Footer ke height ke hisaab se space */
+  margin-bottom: 80px;
+  /* Footer ke height ke hisaab se space */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -121,6 +122,43 @@ footer {
   }
 }
 
+/* ===== Note Section Styling ===== */
+.Note {
+  text-align: center;
+  background-color: #f1fdf4;
+  border: 2px solid #25d366;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin: 30px auto;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.Note:hover {
+  background-color: #e6ffef;
+  transform: scale(1.02);
+}
+
+/* ===== WhatsApp Link Styling ===== */
+.whatsapp-link {
+  color: #25d366;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #128c7e;
+  text-decoration: underline;
+}
+
+
 .mid-title {
   font-size: clamp(20px, 3vw, 28px);
   font-weight: bold;
@@ -131,15 +169,19 @@ footer {
   padding: 8px 16px;
   display: block;
   width: fit-content;
-  margin: 15px auto;   /* ऊपर-नीचे का gap छोटा कर दिया */
+  margin: 15px auto;
+  /* ऊपर-नीचे का gap छोटा कर दिया */
 }
 
 .paper {
-  margin-top: 20px;    /* पहले बहुत ज्यादा था, अब कम किया */
-  margin-bottom: 60px; /* footer ke liye thoda space */
+  margin-top: 20px;
+  /* पहले बहुत ज्यादा था, अब कम किया */
+  margin-bottom: 60px;
+  /* footer ke liye thoda space */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;           /* card ke beech ka gap bhi halka sa kam */
+  gap: 25px;
+  /* card ke beech ka gap bhi halka sa kam */
   justify-items: center;
   padding: 10px;
 }
