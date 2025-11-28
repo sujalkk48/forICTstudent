@@ -1,3 +1,6 @@
+/* ===============================
+   Global Reset + Base Setup
+   =============================== */
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +8,15 @@
 }
 
 body {
-  background-color: black;
+  background-color: #000;
   font-family: Arial, sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
+/* ===============================
+   NAVBAR
+   =============================== */
 nav {
   position: fixed;
   top: 0;
@@ -19,18 +26,27 @@ nav {
   border-bottom: 1px solid white;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 12px;
   z-index: 1000;
 }
 
 .up1 {
   background-color: greenyellow;
   border: 2px solid #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 25px;
+  border-radius: 6px;
   font-size: clamp(16px, 2.5vw, 22px);
-  font-weight: 600;
+  font-weight: 700;
   color: black;
+
+  /* SLIDE ANIMATION LEFT → RIGHT */
+  animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+  0% { transform: translateX(-50vw); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(50vw); }
 }
 
 .up1:hover {
@@ -40,10 +56,12 @@ nav {
   background-color: black;
 }
 
+/* ===============================
+   MAIN GRID SECTION
+   =============================== */
 main {
-  margin-top: 100px;
+  margin-top: 110px;
   margin-bottom: 80px;
-  /* Footer ke height ke hisaab se space */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -51,78 +69,48 @@ main {
   padding: 20px;
 }
 
-
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 250px;
+  max-width: 260px;
   gap: 15px;
 }
 
 .section img {
   width: 100%;
   border: 2px solid white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.3s;
 }
 
 .section img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   border-color: greenyellow;
+  box-shadow: 0 0 15px greenyellow;
 }
 
 .section select {
   width: 100%;
-  padding: 5px;
+  padding: 8px;
   font-size: clamp(14px, 2vw, 16px);
-  border-radius: 5px;
-  border: 2px solid white;
+  border-radius: 6px;
+  border: 2px solid #fff;
   background-color: greenyellow;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-top: 1px solid white;
+.section select:hover {
+  background-color: #caff4d;
 }
 
-.vv99 {
-  text-align: center;
-  padding: 10px;
-  background-color: black;
-  color: white;
-
-
-  width: 400%;
-  border-top: 1px solid white;
-}
-
-
-/* Responsive Grid */
-@media (max-width: 1024px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  main {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-/* ===== Note Section Styling ===== */
+/* ===============================
+   Note Styling
+   =============================== */
 .Note {
   text-align: center;
   background-color: #f1fdf4;
@@ -133,24 +121,21 @@ footer {
   font-family: "Poppins", sans-serif;
   padding: 12px 20px;
   border-radius: 10px;
-  margin: 30px auto;
+  margin: 40px auto;
   width: fit-content;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
 }
 
 .Note:hover {
   background-color: #e6ffef;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* ===== WhatsApp Link Styling ===== */
 .whatsapp-link {
   color: #25d366;
   font-weight: bold;
   text-decoration: none;
-  margin-left: 5px;
-  transition: color 0.3s ease;
 }
 
 .whatsapp-link:hover {
@@ -158,44 +143,92 @@ footer {
   text-decoration: underline;
 }
 
-
+/* ===============================
+   MID TITLE
+   =============================== */
 .mid-title {
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(20px, 3vw, 30px);
   font-weight: bold;
   color: black;
   background-color: greenyellow;
   border: 2px solid white;
   border-radius: 8px;
-  padding: 8px 16px;
-  display: block;
+  padding: 8px 18px;
   width: fit-content;
-  margin: 15px auto;
-  /* ऊपर-नीचे का gap छोटा कर दिया */
+  margin: 25px auto 15px;
+  text-align: center;
 }
 
+/* ===============================
+   PAPERS GRID
+   =============================== */
 .paper {
   margin-top: 20px;
-  /* पहले बहुत ज्यादा था, अब कम किया */
-  margin-bottom: 60px;
-  /* footer ke liye thoda space */
+  margin-bottom: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  /* card ke beech ka gap bhi halka sa kam */
+  gap: 28px;
   justify-items: center;
   padding: 10px;
 }
 
-/* Responsive Grid */
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  text-align: center;
+  padding: 10px 5px;
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid white;
+  font-size: 14px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+/* Tablets */
 @media (max-width: 1024px) {
+  main,
   .paper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
+  main,
   .paper {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 22px;
+  }
+
+  /*
+  .up1 {
+    font-size: 16px;
+    animation: slideText 15s linear infinite;
   }
 }
+  */
+  
+  .up1 {
+  background-color: greenyellow;
+  border: 2px solid #fff;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 700;
+  color: black;
+
+  /* NEW FIX */
+  white-space: nowrap;
+  display: inline-block;
+
+  /* Animation */
+  animation: slideText 12s linear infinite;
+}
+
