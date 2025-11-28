@@ -44,7 +44,7 @@ nav {
 }
 
 @keyframes slideText {
-  0% { transform: translateX(-50vw); }
+  0% { transform: translateX(50vw); }
   50% { transform: translateX(0); }
   100% { transform: translateX(-50vw); }
 }
@@ -231,3 +231,4 @@ footer {
   /* Animation */
   animation: slideText 12s linear infinite;
 }
+
