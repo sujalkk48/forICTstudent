@@ -46,7 +46,7 @@ nav {
 @keyframes slideText {
   0% { transform: translateX(-50vw); }
   50% { transform: translateX(0); }
-  100% { transform: translateX(50vw); }
+  100% { transform: translateX(-50vw); }
 }
 
 .up1:hover {
@@ -205,7 +205,7 @@ footer {
   .paper {
     grid-template-columns: 1fr;
     gap: 22px;
-  }
+  }}
 
   /*
   .up1 {
@@ -231,4 +231,3 @@ footer {
   /* Animation */
   animation: slideText 12s linear infinite;
 }
-
