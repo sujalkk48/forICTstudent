@@ -41,6 +41,7 @@
     'webdevMenu',
     'pyMenu',
     'englishPaperMenu',
+    'englishPaperMenu2',
     'mathsPaperMenu',
     'feMenu'
   ];
